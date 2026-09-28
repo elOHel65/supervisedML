@@ -36,3 +36,18 @@ Download the dataset ZIP from the UCI source linked above. Extract
 
 The dataset is by Arvind Prasad and Shalini Chandra and is shared under
 the Creative Commons Attribution 4.0 (CC BY 4.0) license.
+
+## Data quality check (2026-09-28)
+
+I ran `python3 src/inspect_urls.py` from the project folder.
+
+- Total rows: 235,795
+- Blank URLs: 0
+- Blank labels: 0
+- URLs appearing more than once: 425
+- Extra rows from repeats: 425
+- URLs with conflicting labels: 0
+
+These are exact URL repeats. Before training, I will keep one copy of
+each URL and then split the data into training and test groups. This
+prevents an identical link from appearing in both groups.
