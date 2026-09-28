@@ -51,3 +51,18 @@ I ran `python3 src/inspect_urls.py` from the project folder.
 These are exact URL repeats. Before training, I will keep one copy of
 each URL and then split the data into training and test groups. This
 prevents an identical link from appearing in both groups.
+
+## Training and test split (2026-09-28)
+
+I ran `python3 src/prepare_data.py`. The script keeps one copy of
+each exact URL, shuffles the links with random seed 42, and puts 80%
+in the training group and 20% in the test group.
+
+- Unique URLs: 235,370
+- Training examples: 188,296
+- Test examples: 47,074
+- URLs shared by both groups: 0
+
+The test group will be held aside while training the model. This gives
+me a way to check predictions on links the model has not seen during
+training.
