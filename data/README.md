@@ -1,3 +1,38 @@
-# Dataset
+# Dataset research
 
-The dataset source and download instructions will go here.
+## Candidate: UCI PhiUSIIL Phishing URL (Website)
+
+Source: https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
+
+The downloaded file is `PhiUSIIL_Phishing_URL_Dataset.csv`. Each row
+represents a website link and its corresponding webpage. The file contains
+a `URL` column, other information about the link and webpage, and a
+`label` column.
+
+## Labels I checked
+
+I counted the labels in the downloaded file using Python:
+
+- Phishing (`0`): 100,945
+- Legitimate (`1`): 134,850
+- Total: 235,795
+
+## Initial decision
+
+I want my program to let someone paste in a website link and get a
+prediction: phishing or legitimate.
+
+I will train it using information from the link itself. I will leave out
+details that require opening the website, such as its page title and
+favicon (the small icon shown in a browser tab). This lets the program
+use the same kind of information when someone pastes in a new link.
+
+This dataset is a good starting point because it includes links and their
+correct labels. I still need to test how well a link-only model performs.
+## Download and license
+
+Download the dataset ZIP from the UCI source linked above. Extract
+`PhiUSIIL_Phishing_URL_Dataset.csv` into this `data/` folder.
+
+The dataset is by Arvind Prasad and Shalini Chandra and is shared under
+the Creative Commons Attribution 4.0 (CC BY 4.0) license.
